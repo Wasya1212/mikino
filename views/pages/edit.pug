@@ -1,0 +1,64 @@
+extends ../layouts/default
+
+block vars
+    -
+        page = {
+            language: 'ua',
+            name: 'edt',
+            title: 'Edit',
+            appTitle: 'Edit',
+            description: 'Edit page'
+        }
+        
+block common
+    script(src="js/edit.js")
+
+block content
+    main                
+        .expanded.row.full-height#settings-container 
+            // main registration form
+            form.clearfix(action="", autocomplete="off", novalidate, data-abide="")#edit-form
+                h2 Edit
+                
+                h3 Personal data
+                input(type="text", name="first-name", placeholder="Name", value= currentUser.name.fName)#first-name-input
+                input(type="text", name="middle-name", placeholder="Surrname", value= currentUser.name.mName)#middle-name-input
+                input(type="text", name="last-name", placeholder="Last name", value= currentUser.name.lName)#last-name-input
+                label(for="#birth-input") You birth
+                input(type="date", name="birth", placeholder="Birth day", value= currentUser.privateInfo.birth)#birth-input
+                fieldset.expanded.columns
+                    legend Who are you?
+                    if currentUser.privateInfo.sex == 'male'
+                        input(type="radio", name="sex", value="male", checked, required)#male-radio
+                    else
+                        input(type="radio", name="sex", value="male", required)#male-radio
+                    label(for="male-radio") Male
+                    if currentUser.privateInfo.sex == 'female'
+                        input(type="radio", name="sex", checked, value="female")#female-radio
+                    else
+                        input(type="radio", name="sex", value="female")#female-radio
+                    label(for="female-radio") Female
+                label Few word about you...
+                textarea(name="about", rows="5", placeholder="Enter here")#about-text-area= currentUser.privateInfo.about
+                
+                h3 Contact information
+                input(type="text", name="phone", placeholder="Phone number", value= currentUser.contactsInfo.phone)#phone-input
+                label(for="country-select", value="UA")#country-input Your country
+                select(name="country")#country-select
+                    each country in countries
+                        if currentUser.contactsInfo.country == country.value
+                            option(value= country.value, selected) #{country.name}
+                        else
+                            option(value=country.value) #{country.name}
+                input(type="text", name="sity", placeholder="City", value= currentUser.contactsInfo.city)#city-input
+                
+                h3 Private
+                label(for="secret-type-select") Choose the secret
+                select(name="secret")#secret-type-select
+                    each secret in secrets
+                        if currentUser.secret.question == secret.value
+                            option(value= secret.value, selected) #{secret.text}
+                        else
+                            option(value= secret.value) #{secret.text}
+                input(type="text", placeholder="You secret word", name="answer", value= currentUser.secret.answer)#secret-word-input
+                input.button.align-right(type="submit", value="Save")

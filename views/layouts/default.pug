@@ -1,0 +1,94 @@
+// All project mixins
+include ../mixins/index
+
+// Page characteristics variables
+block vars
+
+block preload
+    -
+        var user = anoutherUser ? anoutherUser : currentUser;
+        var articleColor = user.theme ? user.theme.articleColor : '#3e3e3e';
+        var aboutColor = user.theme ? user.theme.descriptionColor : '#000000';
+        var backgroundColor = user.theme ? user.theme.backgroundColor : '#ffffff';
+        var textColor = user.theme ? user.theme.textColor : '#4d4d4d';
+
+<!DOCTYPE html>
+html(lang=page.language)
+    head
+        include ../partials/head
+        
+        style(type="text/css").
+            .page-home #main-content-wrapper section {
+                background-color: #{backgroundColor};
+            }
+            
+            .page-home #main-content-wrapper .avatar-container a {
+                border: 7px solid #{backgroundColor};
+            }
+            
+            .page-home #main-content-wrapper .name-article {
+                color: #{articleColor};
+                text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);
+            }
+            
+            .page-home #main-content-wrapper .description {
+                color: #{aboutColor};
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+            }
+            
+            .page-home #main-content-wrapper * {
+                color: #{textColor};
+            }
+        
+        link(rel="icon" href="/img/assets/favicon.png")
+        
+        // Foundation
+        link(rel="stylesheet" href="libs/foundation/css/foundation.css")
+        link(rel="stylesheet" href="libs/foundation/css/app.css")
+        link(rel="stylesheet", href="libs/foundation/foundation-icons/foundation-icons.css")
+        
+        // Animate css
+        link(rel="stylesheet", href="libs/animate/animate.css")
+        
+        // Colorpicker css
+        link(rel="stylesheet", href="libs/color/colorpicker.css")
+        
+        // Main styles
+        link(rel="stylesheet", href="css/main.css")
+        link(rel="stylesheet", href="css/media.css")
+        
+        // Additionally styles or scripts
+        block additional
+
+    body(class="page-" + page.name)
+        block body
+            block header
+                include ../partials/header
+            block main
+                .reveal.reveal-modal(role="dialog")#reveal  
+                main.expanded.row#main
+                    .small-6.medium-3.large-2.left-container.columns.show-for-medium#main-menu-wrapper
+                        include ../components/menu
+                    .small-12.medium-9.large-10.right-container.columns#main-content-wrapper
+                        block content
+                        //block footer
+                            include ../partials/footer
+
+            // Foundation
+            script(src="libs/foundation/js/vendor/what-input.js")
+            script(src="libs/foundation/js/vendor/foundation.min.js")
+            script(src="libs/foundation/js/app.js")
+            
+            // Pallete
+            script(src="libs/chromath/chromath.min.js")
+            script(src="libs/color/colorpicker.min.js")  
+
+            // Main scripts
+            script(src="js/write_message/index.js")
+            script(src="js/theme/index.js")
+            script(src="socket.io/socket.io.js")
+            script(src="js/client.js")
+            script(src="js/common.js")
+
+            // Additionally scripts
+            block common

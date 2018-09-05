@@ -1,0 +1,22 @@
+extends ../layouts/default
+
+block vars
+    -
+        page = {
+            language: 'ua',
+            name: 'photos',
+            title: 'Photos',
+            appTitle: 'Photos',
+            description: 'Photos page'
+        }
+
+block common
+    script(src="js/photo.js")
+
+block content
+    #photo_controls.clearfix
+        include ../modules/upload_photo
+        h1 Some controll panel
+    .photo-main-block.expanded.row.small-up-1.medium-up-3.large-up-5#photos_container
+        each photo in currentUser.photos
+            +photoBox(photo)

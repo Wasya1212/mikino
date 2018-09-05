@@ -1,0 +1,46 @@
+extends layouts/default
+
+block preload
+    .empty
+
+block vars
+    -
+        page = {
+            language: 'ua',
+            name: 'login',
+            title: 'Login',
+            appTitle: 'Sign in',
+            description: 'Login page'
+        }
+        
+block body
+    .expanded.row.full-height.gradient-background#login-container
+        // main login form
+        form.small-12.medium-7.large-3.medium-centered.large-centered.column.align-self-middle(action="/login", method="post", autocomplete="off", novalidate, data-abide="")#login-form
+            h2 Authorization
+            if (success_msg != '')
+                .errorBox.success.callout(data-abide-error="")
+                    p
+                        i.fi-alert Some success message
+                    p.error-message #{success_msg}
+            if (error_msg != '')
+                .errorBox.alert.callout(data-abide-error="")
+                    p
+                        i.fi-alert There are some errors in your form
+                p.error-message #{error_msg}
+            if (error != '')
+                .errorBox.alert.callout(data-abide-error="")
+                    p
+                        i.fi-alert There are some errors in your form
+                    p.error-message #{error}
+            input(type="text", name="email", placeholder="Username")#username-input
+            input(type="password", name="password", placeholder="Password")#password-input
+            input.expanded.large.button.success(type="submit", value="Login")
+            .row.align-justify#login-help
+                .column.small-5.medium-6.large-6.align-spaced
+                    a(href="/registration").registration-link registration
+                .column.small-5.medium-6.large-6.align-spaced
+                    a.forgot-pass-link Forgot password?
+                    
+    script(src="js/common.js")
+    //script(src="js/animated_background/index.js")

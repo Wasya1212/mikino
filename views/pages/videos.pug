@@ -1,0 +1,45 @@
+extends ../layouts/default
+
+block vars
+    -
+        page = {
+            language: 'ua',
+            name: 'videos',
+            title: 'Videos',
+            appTitle: 'Videos',
+            description: 'Videos page'
+        }
+        
+        
+        function secondsToHms(d) {
+            d = Number(d);
+            var h = Math.floor(d / 3600);
+            var m = Math.floor(d % 3600 / 60);
+            var s = Math.floor(d % 3600 % 60);
+
+            var hDisplay = h > 0 ? (h > 9 ? ":" : "" + h) : "";
+            var mDisplay = m > 0 ? m + ":" : "0";
+            var sDisplay = s > 0 ? (s > 9 ? s : "0" + s) : "00";
+            return hDisplay + mDisplay + sDisplay; 
+        }
+
+block content
+    .video-controls.clearfix
+        include ../modules/upload_video
+        h1 Controll video panel
+    #own_videos
+        each video in videos
+            +videoPreviewBox(video)
+        //h3= 'title: ' + video.title
+        //h3= 'sc: ' + video.screenshots
+        //h3= 'title: ' + video.original_name
+        //h3= 'duration: ' + secondsToHms(video.duration)
+        //h3= 'owner: ' + video.owner
+        //h3= 'uploaded: ' + (video.uploaded.getMonth() + 1) + "/" + video.uploaded.getDate() + "/" + video.uploaded.getFullYear()
+
+
+    
+block common
+    script(src="js/video.js")
+    script(src="js/mediaelementplayer/mediaelement-and-player.min.js")
+    script(src="js/mediaelementplayer/index.js")

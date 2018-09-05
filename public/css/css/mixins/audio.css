@@ -1,0 +1,58 @@
+.audios-area {
+  min-width: 370px; }
+
+.audioBox {
+  user-select: none !important;
+  margin-top: 0.5rem;
+  cursor: default;
+  position: relative; }
+  .audioBox:hover {
+    background-color: #dddddd; }
+    .audioBox:hover .audio-controll-panel {
+      opacity: 1; }
+  .audioBox:active {
+    cursor: pointer; }
+  .audioBox svg g {
+    fill: #4450a5; }
+  .audioBox .audio-controll-panel {
+    background: rgba(0, 0, 0, 0.35) url(http://localhost:5000/img/assets/play-video-button.png);
+    background-size: cover;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer; }
+  .audioBox .audio-picture {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    float: left; }
+    .audioBox .audio-picture .audio-icon-picture {
+      width: 100%;
+      height: 100%; }
+  .audioBox .audio-info {
+    margin-left: 40px !important; }
+    .audioBox .audio-info > div {
+      white-space: nowrap;
+      max-width: 100%;
+      overflow: hidden;
+      vertical-align: middle;
+      line-height: 40px; }
+    .audioBox .audio-info .audio-artist {
+      min-width: 120px; }
+      .audioBox .audio-info .audio-artist span:hover {
+        text-decoration: underline !important; }
+
+.front-audios .audio-info {
+  max-height: 40px;
+  overflow: hidden; }
+  .front-audios .audio-info .audio-title {
+    width: auto; }
+  .front-audios .audio-info .audio-album {
+    display: none; }
+  .front-audios .audio-info .audio-year {
+    display: none; }
+
+/*# sourceMappingURL=audio.css.map */

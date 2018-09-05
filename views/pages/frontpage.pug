@@ -1,0 +1,65 @@
+extends ../layouts/default
+
+block vars
+    -
+        page = {
+            language: 'ua',
+            name: 'home',
+            title: 'Frontpage',
+            appTitle: 'Frontpage',
+            description: 'Main page'
+        }
+
+block common
+    script(src="js/main.js")
+    script(src="js/photo.js")
+    script(src="js/audio.js")
+    script(src="js/video.js")
+    script(src="js/mediaelementplayer/mediaelement-and-player.min.js")
+    script(src="js/mediaelementplayer/index.js")
+    
+block additional
+    script(src="libs/parallax/parallax.min.js")
+
+block content
+    section.expanded.main-section#profile-section
+        //.main-background-area.clearfix(style="background-image: url(uploads/" + user.backgroundImage + ");")
+        .main-background-area.clearfix(data-z-index="1")
+            script.
+                $('.main-background-area').parallax({imageSrc: 'uploads/#{user.backgroundImage}'});
+            include ../components/profile_connectivity
+        .avatar-container
+            a(href="/", style="background-image: url(uploads/" + user.avatar + ")")
+                img.print-only(src= "uploads/" + user.avatar, alt="")
+        h3.name-article#main-name-article= user.name.fName + ' ' + user.name.mName + ' ' + user.name.lName
+        p.user-about.description#user-description= user.privateInfo.about
+    
+    section.expanded.row.main-section#main-info-section
+        article.small-12.medium-12.medium-centered.large-uncentered.large-6.columns
+            if (photos && photos.length >= 1)
+                h4.medium-text-center.large-text-left foto
+                .front-photos.expanded.row.small-up-2.medium-up-3.large-up-3
+                    each photo in photos
+                        +photoBox(photo)
+            if (video)
+                h4.medium-text-center.large-text-left video
+                .front-video
+                    +videoPreviewBox(video)
+            if (audios && audios.length >= 1)
+                h4.medium-text-center.large-text-left audio
+                .front-audios
+                    each audio in audios
+                        +audioBox(audio)
+            
+                
+        article.small-12.medium-12.large-6.columns
+            h4.medium-text-center.large-text-left info
+            ul#main-info-block
+                +info({email: user.email, phone: user.contactsInfo.phone, country: user.contactsInfo.country, city: user.contactsInfo.city, birth: user.privateInfo.birth, sex: user.privateInfo.sex})
+            
+mixin info(data)
+    each val, index in data
+        if val != ''
+            li
+                strong.description= index
+                span= val

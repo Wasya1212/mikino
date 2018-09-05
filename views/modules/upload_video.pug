@@ -1,0 +1,11 @@
+form.float-right(enctype="multipart/form-data")#upload-video-form
+    label.file-name-field.float-left
+    #upload-video-btn
+        label.button(for="videoUpload") Upload video
+    input.show-for-sr(type="file", multiple="false", accept="video/*", name="videoUpload")#videoUpload
+    button.loading(value="")
+    button.button(type="button")#cancelVideoUpload
+        span.show-for-sr Close
+        span(aria-hidden="true")
+            i.fi-x
+    input.button(type="submit", value="")#send-uploaded-video-btn

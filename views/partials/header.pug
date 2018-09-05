@@ -1,0 +1,49 @@
+header.expanded.row.clearfix#header
+    
+    .title-bar.clearfix(data-responsive-toggle="head-nav", data-hide-for="medium")#toggleMenu
+        button.menu-icon(type="button", data-toggle="main-menu-wrapper")
+        .title-bar-title Menu
+        a.avatar.toogle-logo.float-right(href="/")
+            img.print-only(src="img/assets/logo.png", alt="mikino.ua")
+
+    nav.top-bar(data-topbar="true")#head-nav
+        .row.expanded.clearfix
+            .column.medium-3.large-2
+                .menu-text
+                    a(href="/")
+                        img.print-only(src="img/assets/logo.png", alt="mikino.ua")#logo
+            .column.float-right.medium-9.large-10
+                section.top-bar-left
+                    ul.menu(data-accordion-menu="")#inform-menu
+                        li.inform-accordion
+                            a.withow-arrow(href="")
+                                i.fi-mail
+                            ul.menu.vertical.nested#messages-accordion
+                        li.inform-accordion
+                            a.withow-arrow(href="") 
+                                i.fi-like
+                            ul.menu.vertical.nested#likes-accordion
+                        li.inform-accordion
+                            a.withow-arrow(href="")
+                                i.fi-torsos-all
+                            ul.menu.vertical.nested#friends-accordion
+                        li.inform-accordion
+                            a.withow-arrow(href="")
+                                i.fi-comments
+                            ul.menu.vertical.nested#events-accordion
+
+                section.top-bar-right
+                    +themeMenu
+                    ul.dropdown.menu.float-right#top-profile
+                        li
+                            a(href="#")
+                                .top-profile-name= currentUser.name.fName + ' ' + currentUser.name.lName
+                                img.avatar.print-only.top-profile-image(style="background-image: url(uploads/" + currentUser.avatar +")", alt="")
+                                .top-profile-arrow
+                            ul.menu
+                                li
+                                    a(href="/") Profile
+                                li
+                                    a(href="/edit") Setings
+                                li
+                                    a(href="/logout") Logout

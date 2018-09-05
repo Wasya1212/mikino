@@ -1,0 +1,11 @@
+form.float-right(enctype="multipart/form-data")#upload-audio-form
+    label.file-name-field.float-left
+    #upload-audio-btn
+        label.button(for="audioUpload") Upload audio
+    input.show-for-sr(type="file", multiple="false", accept="audio/*, audio/mp3", name="audioUpload")#audioUpload
+    button.loading(value="")
+    button.button(type="button")#cancelAudioUpload
+        span.show-for-sr Close
+        span(aria-hidden="true")
+            i.fi-x
+    input.button(type="submit", value="")#send-uploaded-audio-btn

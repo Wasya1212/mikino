@@ -1,0 +1,72 @@
+.notice-message-box {
+  border-bottom: 1px solid silver;
+  width: 100%;
+  padding: 3 0; }
+  .notice-message-box .notice-message-user-img {
+    float: left;
+    display: inline-block; }
+    .notice-message-box .notice-message-user-img img {
+      width: 50px;
+      height: 50px; }
+  .notice-message-box .notice-message-content {
+    padding-left: 5px;
+    display: inline-block; }
+    .notice-message-box .notice-message-content p {
+      padding: 0;
+      margin: 0; }
+
+.edit_table {
+  -moz-appearance: textfield-multiline;
+  -webkit-appearance: textarea;
+  border: 1px solid gray;
+  font: medium -moz-fixed;
+  font: -webkit-small-control;
+  overflow: auto;
+  padding: 2px;
+  resize: both;
+  max-width: 100%; }
+
+.main-box-edit-table {
+  width: 100%;
+  height: 150px; }
+
+.box-layout {
+  padding: 1rem; }
+  .box-layout a {
+    display: block;
+    text-transform: capitalize; }
+  .box-layout .box-title-wrap .box-title-controls a {
+    float: right;
+    margin-right: 3rem; }
+  .box-layout .box-body .main-box-profile {
+    float: left;
+    padding: 1rem; }
+    .box-layout .box-body .main-box-profile .mail-box-avatar {
+      float: left;
+      margin-right: 1rem;
+      width: 60px;
+      height: 60px; }
+      .box-layout .box-body .main-box-profile .mail-box-avatar a {
+        height: 100%;
+        width: 100%;
+        border-radius: 5px; }
+    .box-layout .box-body .main-box-profile .mail-box-recepient-info {
+      float: left; }
+      .box-layout .box-body .main-box-profile .mail-box-recepient-info a {
+        float: left;
+        width: 100% !important; }
+    .box-layout .box-body .main-box-profile p span {
+      font-family: COURIER;
+      font-size: 12px;
+      font-weight: bold;
+      color: #606060; }
+  .box-layout .box-body .main-box-text-wrap .main-box-edit-table {
+    font-size: 16px;
+    font-family: verdana; }
+  .box-layout .box-body .main-box-controls button {
+    background-color: #70cff2;
+    margin-top: 1rem;
+    color: white;
+    border-radius: 5px; }
+
+/*# sourceMappingURL=write_message.css.map */

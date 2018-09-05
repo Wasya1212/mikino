@@ -1,0 +1,16 @@
+{
+  "name": "dump",
+  "version": "1.0.0",
+  "description": "MongoDb databse restore and backup apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wasya1212",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb-backup": "^1.6.9",
+    "mongodb-restore": "^1.6.2",
+    "nconf": "^0.8.4"
+  }
+}

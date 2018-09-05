@@ -1,0 +1,22 @@
+extends ../layouts/default
+
+block vars
+    -
+        page = {
+            language: 'ua',
+            name: 'messages',
+            title: 'Messages',
+            appTitle: 'Messages',
+            description: 'Messages page'
+        }
+
+block content
+    .expanded.row
+        .medium-8.large-9.column
+            each person in dialogPersons
+                +personDialog(person)
+        .medium-4.large-3.column.show-for-medium
+            h1 here filter
+    
+block common
+    script(src="js/message.js")

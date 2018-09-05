@@ -1,0 +1,27 @@
+extends ../layouts/default
+
+block vars
+    -
+        page = {
+            language: 'ua',
+            name: 'users',
+            title: 'Users',
+            appTitle: 'Users',
+            description: 'Users page'
+        }
+
+block content
+    .row
+        .medium-9.large-7.columns#users-list
+            each user in users
+                section.user_row.clearfix(id="user_row" + user._id.toString().substring(9, -9))
+                    .user-photo-wrap
+                        a.avatar.user-photo(href="/" + user._id, style="background-image: url(uploads/" + user.avatar + ");")
+                            img.user-photo-img.print-only(src="/uploads/" + user.avatar, alt="")
+                    .user-info
+                        .user-field.user-field-title
+                            a(href="/" + user._id)= user.name.fName + ' ' + user.name.lName
+                        if user.status != undefined
+                            .user-field= user.status
+                        a.user-field-actions(onclick="showWriteMessageBox(event, '" + user._id + "');", href="write" + user._id) Message  
+        h1.medium-3.large-5.columns.side-filter.filter#users-filter.show-for-medium filter

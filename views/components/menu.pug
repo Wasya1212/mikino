@@ -1,0 +1,51 @@
+ul.menu.vertical
+    li.has-submenu#main-submenu
+        ul.menu.submenu.vertical(data-submenu="")
+            li.active.home-link
+                a(href="/") 
+                    i.fi-home
+                    span home
+            li.messages-link
+                a(href="/messages") 
+                    i.fi-mail
+                    span messages
+            li.audios-link
+                a(href="/audios") 
+                    i.fi-music
+                    span audios
+            li.videos-link
+                a(href="/videos") 
+                    i.fi-play-video
+                    span videos
+            li.photos-link
+                a(href="/photos") 
+                    i.fi-photo
+                    span photos
+            li.news-link
+                a(href="/feed") 
+                    i.fi-torso
+                    span news
+            li.users-link
+                a(href="/users") 
+                    i.fi-torsos
+                    span users
+            li.settings-link
+                a(href="/edit")
+                    i.fi-wrench
+                    span settings
+    li.has-submenu#friends-submenu
+        i.fi-list
+            a.menu-text(href="/friends") friends
+        ul.menu.submenu.vertical.nested(data-submenu="")
+    li.has-submenu#groups-submenu
+        i.fi-list
+            a.menu-text(href="/groups") chat groups
+        ul.menu.submenu.vertical.nested(data-submenu="")
+            li
+                a(href="#") group
+            li
+                a(href="#") group
+            li
+                a(href="#") group
+            li
+                a(href="#") group

@@ -1,0 +1,88 @@
+$screenshotW: 640px
+$screenshotH: 360px
+$screenshotScale: 0.5
+$fontSize: 15px
+$screenshotsBgc: black
+$playIcon: url(http://localhost:5000/img/assets/play_icon.png)
+
+.hidden
+    opacity: 0
+
+.video-controls
+    h1
+        text-shadow: 1px 1px 1px #d6d6d6
+        margin-top: 40px
+        
+#own_videos
+    text-align: center
+    text-align-last: center
+    
+.videoPreviewBox
+    vertical-align: middle
+    font-size: $fontSize
+    z-index: 3
+    margin: 10px 20px
+    position: relative
+    display: inline-block
+    color: white
+    padding: 0
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+    max-width: $screenshotW * $screenshotScale
+    .preview-screenshots
+        position: relative
+        cursor: pointer
+        background-color: $screenshotsBgc
+        width: $screenshotW * $screenshotScale
+        height: $screenshotH * $screenshotScale
+        .play-background
+            background-image: $playIcon
+            background-size: 20% auto
+            background-position: center center
+            background-repeat: no-repeat
+            position: absolute
+            width: 100%
+            height: 100%
+            background-color: rgba(0, 0, 0, 0.3)
+            &:hover
+                opacity: 1
+    .video-info
+        color: black
+        z-index: 10
+        &>*
+            max-width: 100%
+        clear: both
+        width: 100%
+        height: auto
+        .video-duration
+            position: absolute
+            right: 0
+            vertical-align: middle
+            border-radius: 2px
+            padding: 0 5px
+            background-color: rgba(222, 221, 221, 0.37)
+            float: right
+            margin-top: -75px
+            margin-right: 15px
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5)
+            color: white!important
+        .video-title-name
+            cursor: default
+            display: block
+            white-space: nowrap
+            overflow: hidden
+            text-overflow: ellipsis
+        .video-creation-time, .video-views
+            color: rgba(56, 56, 56, 0.7)
+            font-size: 12px
+            font-family: arial black
+        .video-creation-time
+            float: left
+        .video-views
+            float: right
+            &:before
+                content: "views"
+                display: block
+                float: right
+                margin-left: 5px

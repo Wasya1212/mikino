@@ -1,0 +1,225 @@
+$playAudioIcon: url(http://localhost:5000/img/assets/play_icon.png)
+$pauseAudioIcon: url(http://localhost:5000/img/assets/pause_icon.png)
+$muteAudioIcon: url(http://localhost:5000/img/assets/volume.png)
+$unmuteAudioIcon: url(http://localhost:5000/img/assets/unmute.png)
+
+.bgimg
+    z-index: -1!important
+    &:after
+        z-index: -1!important
+        position: absolute
+        left: 0
+        top: 0
+        content: ""
+        width: 100%
+        height: 100%
+        //background-color: rgba(0, 0, 0, 0.7)
+        background-color: rgba(255, 255, 255, 0.65)
+    img
+        position: absolute!important
+        top: 0!important
+        left: 0!important
+        width: 100%!important
+        height: 100%!important
+        //background-image: url(https://68.media.tumblr.com/c4f861600fd334aba07a1a6c3b21be64/tumblr_nynuc7krlJ1sla4uvo1_250.jpg)
+        background-position: 0 50%
+        background-repeat: no-repeat
+        background-size: cover
+    
+
+.blur
+    filter: blur(30px)
+    z-index: -2!important
+    
+
+.audio-player
+    margin-bottom: 1rem
+    color: white
+    overflow: hidden
+    z-index: 0
+    position: relative
+    width: 100%
+    background-color: #ededed
+    border-radius: 5px
+    padding: 20px
+    padding-bottom: 0
+    box-sizing: border-box
+    &>*
+        z-index: 1
+    .mejs__container, .mejs__inner
+        outline: none
+        overflow: hidden
+        width: 100%!important
+        height: auto!important
+    div
+        display: inline-block
+    h1, h2, h3, h4, h5, h6
+        display: inline
+        float: left
+        clear: left
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5)
+    #audio-player-main
+        width: 100%
+    h1
+        float: left
+        color: white
+    a
+    img
+        width: 100%
+        height: 100%
+    span
+    button
+        width: 30px
+        height: 30px
+        cursor: pointer
+        margin: 0
+        bottom: 0
+        padding: 0
+        outline: 0
+    .cover
+        z-index: 99
+        display: block
+        float: left
+        width: 120px
+        height: 120px
+        border-radius: 5px
+        margin-right: 10px
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: contain
+    .audio-title-info
+        float: left
+        user-select: auto
+        cursor: default
+    .mejs__controls
+        position: relative
+        width: 100%
+        margin: 5px 0 45px 0
+        .mejs__currenttime-container
+            padding-top: 5px
+            display: block
+            float: left
+        .mejs__duration-container
+            padding-top: 5px
+            display: block
+            float: right
+            margin-left: 30px
+        .mejs__time-rail
+            width: 100%
+            float: right
+            margin-right: 0
+            height: 3px
+            max-width: 100%!important
+            position: relative
+            .mejs__time-slider
+                background-color: transparent
+                height: 30px
+                span
+                    height: 3px
+                    position: absolute
+                    height: 100%
+                    width: 100%
+                    display: block
+                    transform-origin: 0 0
+                    margin: 1px 0
+                    transition: all .05s ease-in-out
+            .mejs__time-total
+                padding-top: 14px
+                cursor: pointer
+                display: block
+                width: 100%
+                outline: none
+                .mejs__time-buffering
+                    
+                .mejs__time-loaded
+                    background-color: #fff
+                .mejs__time-current
+                    z-index: 2
+                    background-color: #64b44c
+                    position: absolute
+                    left: 0
+                .mejs__time-hovered
+                    transform: scaleX(0)
+                    z-index: 1
+                    background-color: #a8b7eb
+                .mejs__time-handle
+                    z-index: 3
+                    width: 18px
+                    height: 18px
+                    margin-top: -7px
+                    border-radius: 50%
+                    border: 2px solid #64b44c
+                    background-color: white!important
+                    span
+                .active-slider
+                    border: none
+                    width: 30px
+                    height: 30px
+                    margin-top: -12px
+                       
+                .mejs__time-float
+                    span
+                        margin-top: 25px
+                        margin-left: 20px
+                        color: black
+        .mejs__playpause-button
+            position: absolute
+            left: 0
+            top: 40px
+        .mejs__volume-button
+            position: absolute
+            right: 130px
+            top: 40px
+        .mejs__horizontal-volume-total
+            position: absolute
+            right: 0
+            top: 38px
+        .mejs__play
+            button
+                background: transparent $playAudioIcon
+                background-size: cover
+                background-repeat: no-repeat
+                margin-top: -7px
+                width: 50px
+                height: 50px
+        .mejs__pause
+            button
+                background: transparent $pauseAudioIcon
+                background-size: contain
+                background-repeat: no-repeat
+                margin-top: -7px
+                width: 50px
+                height: 50px
+        .mejs__mute
+            button
+                background: transparent $muteAudioIcon
+                background-size: contain
+                background-repeat: no-repeat
+        .mejs__unmute
+            button
+                background: transparent $unmuteAudioIcon
+                background-size: contain
+                background-repeat: no-repeat
+        .mejs__horizontal-volume-total
+            padding: 15px 0
+            border-radius: 2px
+            width: 120px
+            &:before
+                position: absolute
+                left: 0
+                content: ""
+                display: block
+                background-color: rgba(0, 0, 0, 0.05)
+                border-radius: 2px
+                height: 5px
+                width: 100%
+            .mejs__horizontal-volume-current
+                position: absolute
+                cursor: pointer
+                width: 100%
+                height: 5px
+                background-color: white
+    .mejs-button
+
+.mejs__offscreen
+    display: none

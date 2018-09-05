@@ -1,0 +1,10 @@
+mixin photoBox(path)
+    .photoBox.column.column-block
+        .photo-container.avatar(style="background-image: url('uploads/" + path + "')", onclick="showFullPicture('" + path + "');")
+            img.print-only(src="uploads/" + path)
+        .photo-info.clearfix
+            .creation-time.float-left
+                //span.created= Date.now()
+            .public-info.float-right
+                span.likes likes: 0
+                span.reposts reposts: 0 

@@ -1,0 +1,126 @@
+$editContainerBgc: #60616d
+$editButtonsBgc: #fff
+$buttonHeight: 45px
+
+#theme_container
+    position: relative
+    .theme-edit-menu
+        min-height: 100vh
+        position: relative
+        padding: 25px 15px
+        background-color: $editContainerBgc
+        height: 100%
+        border-right: 1px solid black
+        .theme-introduction
+            width: 100%
+            padding: 15px
+            text-align: center
+            margin-bottom: 20px
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5)
+            color: white
+            font-size: 35px
+            text-shadow: 1px 1px 1px black
+        .edit-main-style, .edit-secondary-style
+            background-color: $editButtonsBgc
+            border-radius: 15px
+            padding: 10px
+        .edit-main-style
+            margin-bottom: 20px
+            &>div
+                &:first-child
+                    margin-top: 10px
+                width: 100%
+                margin-bottom: 10px
+                position: relative
+                clear: both
+            .button
+                background-color: transparent
+                color: black
+                margin: 0
+                height: $buttonHeight
+                text-align: left
+                width: 100%
+                max-width: 100%
+            .change-background-image,
+            .change-avatar-image,
+            .change-title-color,
+            .change-text-color,
+            .change-description-color,
+            .change-background-color
+                position: relative
+                border-radius: 5px
+                &:hover
+                    background-color: $editButtonsBgc - #111111
+                    cursor: pointer
+            .change-background-image
+                .button
+                    width: 100%
+            .change-avatar-image
+                .button
+                    width: 100%
+            .change-title-color
+                .current-title-color-box
+            .change-text-color
+                .current-text-color-box
+            .change-description-color
+                .current-description-color-box
+            .change-background-color
+                .current-background-color-box
+            .current-color_container
+                border: 1px solid rgba(0, 0, 0, 0.1)
+                border-radius: 50%
+                cursor: default!important
+                position: absolute
+                right: 0
+                top: 0
+                margin-right: 10px
+                height: $buttonHeight
+                width: $buttonHeight
+            #color-picker
+                cursor: default
+                box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5)
+                position: absolute
+                top: -35px
+                left: calc(100% + 10px + 15px)
+                background-color: $editButtonsBgc
+                padding: 15px
+                height: 230px
+                border-radius: 10px
+                &:before
+                    z-index: 999
+                    content: ''
+                    display: block
+                    width: 0
+                    height: 0
+                    position: absolute
+                    left: -40px
+                    top: 10px
+                    border: 20px solid black
+                    border-color: transparent $editButtonsBgc transparent transparent
+        .edit-secondary-style
+            color: black
+            padding: 100px 0
+            font-size: 42px
+            text-align: center
+            vertical-align: middle
+            margin-bottom: 20px
+        .save-theme-btn
+            float: right
+            border-radius: 7px
+            color: white
+            padding: 10px 15px
+    #theme_preview
+        min-height: 100vh
+        padding: 0
+        //border-left: 10px solid transparent
+        box-sizing: border-box
+        
+.confirm_color_btn
+    color: white!important
+    position: absolute
+    float: right!important
+    width: auto!important
+    background-color: #464646!important
+    border-radius: 10px!important
+    bottom: 10px
+    right: 10px

@@ -1,0 +1,16 @@
+mixin userFriendBox(user)
+    .friend-box.clearfix(id="friend-box-user-" + user._id)
+        .box-image
+            a.avatar(href="/" + user._id, alt="", style="background-image: url(uploads/" + user.avatar + ")")
+                img.print-only(src="uploads/" + user.avatar)
+        .box-user-info.box-info
+            .user-box-title
+                a(href="/" + user._id) #{user.name.fName + ' ' + user.name.lName}
+            .user-box-about
+                span.user-about-info= user.privateInfo.about
+        //.box-user-operations
+            .send-message.messaging-operation-box.operation-box send message
+            .video-call.video-calling-operation-box.operation-box video call
+            .call.calling-operation-box.operation-box video call
+            .add-to-friends-box.operation-box add to friends
+            .reject-friends-box.operation-box reject friends request

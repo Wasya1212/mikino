@@ -1,0 +1,93 @@
+.main-background-area {
+  padding: 0;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.avatar-container {
+  position: relative;
+  z-index: 10;
+  margin-top: -80px;
+  width: 100%; }
+  .avatar-container a {
+    border-radius: 10%;
+    margin: 0 auto;
+    display: block;
+    width: 130px;
+    height: 130px;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat; }
+    .avatar-container a img {
+      max-width: 100%;
+      max-height: 100%; }
+
+#user-description {
+  cursor: default;
+  text-align: center;
+  font-size: 25px; }
+
+.name-article {
+  cursor: default;
+  font-size: 60px;
+  padding: 10px 0;
+  font-weight: bold;
+  text-align: center; }
+
+#profile-section {
+  position: relative;
+  padding: 0 !important; }
+  #profile-section img {
+    width: 100%;
+    height: auto; }
+
+.front-photos .photoBox {
+  display: inline-block;
+  float: left;
+  max-width: 250px !important; }
+
+.front-audios .audio-duration {
+  float: right; }
+  .front-audios .audio-duration span {
+    width: 50px !important;
+    right: 0;
+    position: absolute; }
+
+.front-video .videoPreviewBox, .front-video .preview-screenshots, .front-video .video-screenshot {
+  width: 100%;
+  margin: 0; }
+
+#main-info-section h4 {
+  font-size: 35px;
+  text-transform: capitalize;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+
+.main-section {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+  .main-section article {
+    padding: 0.9375rem 0; }
+
+#main-info-block {
+  position: relative; }
+  #main-info-block li {
+    cursor: default;
+    font-size: 20px;
+    width: 100%;
+    list-style-type: none;
+    padding: 3px 0; }
+    #main-info-block li strong {
+      text-transform: capitalize;
+      width: 30%;
+      display: inline-block; }
+      #main-info-block li strong:after {
+        content: ": ";
+        display: inline-block;
+        margin-right: 10px; }
+    #main-info-block li span {
+      text-align: left;
+      right: 0;
+      display: inline-block; }
+
+/*# sourceMappingURL=frontpage.css.map */

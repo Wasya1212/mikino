@@ -1,0 +1,21 @@
+extends layouts/default
+
+block vars
+    -
+        page = {
+            language: 'ua',
+            name: 'home',
+            title: 'Frontpage',
+            appTitle: 'Frontpage',
+            description: 'Main page'
+        }
+
+block header
+    include partials/header
+
+
+block main
+    h1 hello in kukuh.com
+
+block footer
+    include partials/footer

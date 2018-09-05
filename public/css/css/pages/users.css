@@ -1,0 +1,23 @@
+.user_row {
+  padding: 10px 0 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+  .user_row .user-photo-wrap {
+    width: 100px;
+    height: 100px;
+    margin-right: 1rem;
+    float: left; }
+    .user_row .user-photo-wrap a {
+      display: block; }
+    .user_row .user-photo-wrap .user-photo {
+      border-radius: 10px;
+      height: 100%;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
+  .user_row .user-info {
+    display: block; }
+    .user_row .user-info a {
+      color: #4a6d7c; }
+    .user_row .user-info .user-field-title {
+      font-size: 16px;
+      font-weight: bold; }
+
+/*# sourceMappingURL=users.css.map */

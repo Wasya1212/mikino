@@ -1,0 +1,14 @@
+mixin messageBox(message, user)
+    .message-user-img
+        a.avatar(href="/" + user._id, style="background-image: url(uploads/" + user.avatar +")")
+            img.print-only.avatar(src="uploads/" + user.avatar, alt="")
+    .user-message-container
+        p= message.text
+
+mixin message(message, user, own)
+    if own == false
+        .messageBox.clearfix&attributes({'class' : 'recipient-message'})
+            +messageBox(message, user)
+    else
+        .messageBox.clearfix&attributes({'class' : 'user-message'})
+            +messageBox(message, user)

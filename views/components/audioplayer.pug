@@ -1,0 +1,10 @@
+.audio-player.clearfix
+    include ../modules/upload_audio
+    .bgimg
+        img.blur(style="background-image: url('/img/assets/audio_preview-background.jpg')")
+    a.cover(nohref, style="background-image: url('/img/assets/audio_preview-background.jpg')")
+        img.print-only(src="img/assets/audio_preview-background.jpg")
+    .audio-title-info
+        h1 Song title
+        h3 Song artist
+    audio(src="uploads/1494940598583-Sawano Hiroyuki ft. Mizuki - aLIEz (Альдноа Зеро).mp3", type="audio/mp3", controls="controls")#audio-player-main

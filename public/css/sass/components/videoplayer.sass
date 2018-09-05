@@ -1,0 +1,189 @@
+$playIcon: url(http://localhost:5000/img/assets/play_icon.png)
+$playVideo: url(http://localhost:5000/img/assets/play-video-button.png)
+$pauseVideo: url(http://localhost:5000/img/assets/pause-video-button.png)
+$fullscreen: url(http://localhost:5000/img/assets/fullscreen.png)
+$unfullscreen: url(http://localhost:5000/img/assets/unfullscreen.png)
+$mute: url(http://localhost:5000/img/assets/volume.png)
+$unmute: url(http://localhost:5000/img/assets/unmute.png)
+
+$videoW: 100%
+$videoH: calc((360/640) * $videoW)
+
+.reveal
+    .mejs__video
+        width: $videoW!important
+        height: auto!important
+        margin: 0 auto
+        #video_player
+        #video_player_html5
+            width: $videoW!important
+            height: auto!important
+
+
+    .mejs__time-total, .mejs__container
+        outline: none
+
+    .mejs__controls
+        display: none
+
+    .mejs__inner
+        position: relative
+        div
+        button
+        span
+            display: block
+            transition: all .05s ease-in-out
+        .mejs__mediaelement
+        .mejs__layers
+            .mejs__poster
+            .mejs__overlay-play
+                position: absolute
+                top: 0
+                left: 0
+                cursor: pointer
+                background-image: $playIcon
+                background-size: 10% auto
+                background-repeat: no-repeat
+                background-position: center center
+                .mejs__overlay-button
+            .mejs__overlay-loading
+                display: block
+                span
+            .mejs__overlay
+                width: 100%!important
+                height: 100%!important
+        .mejs__controls
+            padding: 5px 0
+            margin-bottom: 5px
+            clear: both
+            position: absolute
+            bottom: 0
+            left: 0
+            background-color: rgba(0, 0, 0, 0.7)
+            width: 100%!important
+            button
+                width: 30px
+                height: 30px
+                outline: none
+            &>div
+                background-repeat: no-repeat
+                background-position: center center
+                background-size: contain
+                display: block
+            .mejs__playpause-button
+                margin-right: 20px
+                margin-left: 10px
+                float: left
+                button
+                    cursor: pointer
+            .mejs__pause
+                background-image: $pauseVideo
+            .mejs__play
+                background-image: $playVideo
+            .mejs__time-rail
+                cursor: pointer
+                position: absolute
+                top: -10px
+                background-color: rgba(39, 39, 39, 0.7)
+                width: 100%!important
+                .mejs__time-slider
+                    height: 10px
+                    &>span
+                        transform-origin: 0 0
+                        position: absolute
+                        top: 0
+                        left: 0
+                        height: 100%
+                        width: 100%
+                    .mejs__time-current
+                        background-color: #e3e3e3
+                    .mejs__time-handle
+                        background-color: #000000
+                        width: 2px
+                        .mejs__time-handle-content
+                    .mejs__time-hovered
+                        transform: scaleX(0)
+                        background-color: rgba(255, 255, 255, 0.5)
+                    .mejs__time-float
+                        display: none
+                        .mejs__time-float-current
+                            margin-left: 20px
+                            margin-top: -30px
+                            background-color: rgba(255, 255, 255, 0.15)
+                            border-radius: 2px
+                            width: auto
+                            display: block
+                            position: absolute
+                        .mejs__time-float-corner
+            .mejs__volume-button
+                float: left
+                button
+                    cursor: pointer
+            .mejs__mute
+                background-image: $mute
+            .mejs__unmute
+                background-image: $unmute
+            .mejs__time
+                color: white
+                float: right
+                cursor: default
+                margin-top: 7px
+            .mejs__duration-container
+                display: block!important
+                .mejs__duration
+            .mejs__time
+                .mejs__currenttime
+                    &:after
+                        content: '/'
+                        padding: 0 5px
+                        display: inline
+            .mejs__horizontal-volume-slider
+                margin-left: 10px
+                float: left
+                .mejs__offscreen
+                    display: none
+                .mejs__horizontal-volume-total
+                    position: relative
+                    width: 150px
+                    height: 10px
+                    background-color: rgba(212, 212, 212, 0.7)
+                    margin-top: 15px
+                    margin-left: 10px
+                    div
+                        width: 100%
+                        height: 100%
+                    .mejs__horizontal-volume-current
+                        background-color: white
+                    .mejs__horizontal-volume-handle
+            .mejs__fullscreen-button
+                float: right
+                margin-right: 10px
+                margin-left: 20px
+                background-image: $fullscreen
+                button
+                    cursor: pointer
+            .mejs__unfullscreen
+                background-image: $unfullscreen
+            .mejs__fullscreen
+                background-image: $fullscreen
+            .mejs__duration-container
+                display: none
+                width: auto
+                height: auto
+                span
+                    display: block
+        .mejs__clear
+            display: block
+
+    .mejs__container-fullscreen
+        .mejs__inner
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            #video_player_html5
+                width: 100%!important
+                height: 100%!important
+        .mejs__controls
+            margin-bottom: 0

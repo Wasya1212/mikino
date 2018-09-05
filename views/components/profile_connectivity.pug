@@ -1,0 +1,12 @@
+if (administrator == false)
+    menu.menu#person-connectivity-menu                    
+        if (frendlyStatus == 'friend')
+            button.button.reed-person-btn(type="button", onclick="endFriendship (event, '" + user._id + "');")#end-reed-person remove from friends
+        else if (frendlyStatus == 'income')
+            button.button.reed-person-btn(type="button", onclick="confirmFriendship (event, '" + user._id + "');")#subscribed-person Subscribed
+        else if (frendlyStatus == 'outcome')
+            button.button.reed-person-btn(type="button", onclick="cancelFriendship (event, '" + user._id + "');")#cancel-reed-person friendship cancel
+        else if (frendlyStatus == 'none')
+            button.button.reed-person-btn(type="button", onclick="friendship (event, '" + user._id + "');")#start-reed-person friendship
+
+        button.button(type="button", onclick="showWriteMessageBox(event, '" + user._id + "');")#write-message-to write

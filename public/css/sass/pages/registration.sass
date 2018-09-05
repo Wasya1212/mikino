@@ -1,0 +1,64 @@
+.progress
+    margin-bottom: 0
+    
+#to-login
+    text-align: center
+    
+#registration-form
+    -vendor-animation-duration: 3s
+    -vendor-animation-delay: 2s
+    -vendor-animation-iteration-count: infinite
+
+#avatar-form
+    .avatar-wrapper
+        margin-bottom: 10px
+        padding-bottom: 100%
+        overflow: hidden
+        width: 100%
+        position: relative
+        //border-radius: 50%
+        .avatar-image
+            position: absolute
+            width: 100%
+            height: 100%
+            left: 0
+            top: 0
+            background-size: cover
+        
+    
+.progress-meter
+    -vendor-animation-duration: 2s
+
+#registration-container, #login-container
+    height: 100vh
+    padding: 5% 0
+    form
+        padding: 10% 0
+       
+.page-registration
+    background-image: url(http://localhost:5000/img/registration_bg.gif)
+    background-size: cover
+    background-position: center center
+    background-attachment: fixed
+    background-repeat: no-repeat
+    background-color: #fdc476
+    a, h2, h3
+        color: white
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7)
+    .button-group
+        width: 100%!important
+    #registration-container
+        background-color: rgba(0, 0, 0, 0.33)
+        .to-login-btn
+            float: right
+            font-size: 20px
+            text-transform: capitalize
+        .errorBox
+            border-radius: 15px
+        input, select, textarea
+            background-color: rgba(255, 255, 255, .95)
+            color: black
+            border-radius: 10px
+        .button
+            background-color: #6d6c6c
+            color: white

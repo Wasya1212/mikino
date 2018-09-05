@@ -1,0 +1,29 @@
+extends ../layouts/default
+
+block vars
+    -
+        page = {
+            language: 'ua',
+            name: 'friends',
+            title: 'Friends',
+            appTitle: 'Friends',
+            description: 'Friends page'
+        }
+
+block content
+    .expanded.row
+        .medium-9.large-9.column
+            h1 Outcome requests
+            each user in outcomeRequests
+                +userFriendBox(user)
+
+            h1 Income requests
+            each user in incomeRequests
+                +userFriendBox(user)
+
+            h1 Friends
+            each user in friends
+                +userFriendBox(user)
+        
+        .medium-3.large-3.column
+            h2 Here filter            

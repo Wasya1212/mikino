@@ -1,0 +1,74 @@
+$iconSize: 40px
+
+.audios-area
+    min-width: 370px
+    
+.audioBox
+    user-select: none!important
+    margin-top: 0.5rem
+    cursor: default
+    position: relative
+    &:hover
+        background-color: #fff - #222
+        .audio-controll-panel
+            opacity: 1
+    &:active
+        cursor: pointer
+    div
+    a
+    img
+    svg
+        g
+            fill: #4450a5
+    .audio-controll-panel
+        background: rgba(0, 0, 0, 0.35) url(http://localhost:5000/img/assets/play-video-button.png)
+        background-size: cover
+        opacity: 0
+        position: absolute
+        top: 0
+        left: 0
+        width: $iconSize
+        height: $iconSize
+        cursor: pointer
+    .audio-picture
+        width: $iconSize
+        height: $iconSize
+        position: relative
+        float: left
+        .audio-icon-picture
+            width: 100%
+            height: 100%
+        .audio-icon
+    .audio-info
+        margin-left: $iconSize!important
+        &>
+            div
+                white-space: nowrap
+                max-width: 100%
+                overflow: hidden
+                vertical-align: middle
+                line-height: $iconSize
+        .audio-title
+        .audio-artist
+            min-width: 120px
+            span
+                &:hover
+                    text-decoration: underline!important
+        .audio-album
+        .audio-year
+        .audio-duration
+        .audio-owner    
+    
+.front-audios
+    .audio-info
+        max-height: $iconSize
+        overflow: hidden
+        .audio-artist
+        .audio-title
+            width: auto
+        .audio-album
+            display: none
+        .audio-year
+            display: none
+        .audio-duration
+            //display: none

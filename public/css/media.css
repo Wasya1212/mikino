@@ -1,0 +1,162 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1920px) {
+    .page-home .public-info .likes, .page-home .public-info .reposts {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width : 1200px) {
+    #profile-section {
+        padding-bottom: 10%;
+    }
+    .avatar-container {
+        margin-top: -40px!important;
+    }
+    .avatar-container a{
+        max-width: 95px;
+        max-height: 95px;
+    }
+    .main-background-area {
+        height: 250px!important;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    .avatar-container {
+        margin-top: -30px!important;
+    }
+    .avatar-container a{
+        max-width: 85px;
+        max-height: 85px;
+    }
+   .main-background-area {
+        height: 200px!important;
+    }
+    .user_row .user-photo-wrap {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    #photo_controls h1, .video-controls h1 {
+        font-size: 30px;
+    }
+    #main-info-section h4 {
+        font-size: 30px;
+    }
+    #main-name-article {
+        font-size: 35px;
+    }
+    #user-description, .description, #main-info-block span {
+        font-size: 17px;
+    }
+    #toggleMenu{
+        display: block;
+    }
+    #head-nav {
+        display: none;
+    }
+    #profile-section {
+        padding-bottom: 20%;
+    }
+    .avatar-container {
+        margin-top: -85px;
+    }
+    .avatar-container a{
+        max-width: 100px;
+        max-height: 100px;
+    }
+    .main-background-area {
+        height: 220px!important;
+    }
+}
+
+@media only screen and (max-width : 640px) {
+    #main {
+        margin-top: 41px
+        height: calc(100vh - 40px);
+    }
+    #photo_controls {
+        border-radius: 0;
+    }
+}
+
+@media only screen and (max-width : 600px) {
+    .audio-player .cover {
+        width: 90px;
+        height: 90px;
+    }
+    .user-message-container p {
+        font-size: 14px;
+    }
+    #profile-section {
+        padding-bottom: 30%;
+    }
+    .avatar-container {
+        margin-top: -50px!important;
+    }
+    .avatar-container a{
+        max-width: 100px;
+        max-height: 100px;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+    .user-info, .user-field-title a{
+        font-size: 12px;
+    }
+    .audio-player .cover {
+        width: 70px;
+        height: 70px;
+    }
+    .public-info span {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width : 390px) {
+    .public-info span {
+        font-size: 10px;
+    }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .public-info span {
+        font-size: 14px;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}

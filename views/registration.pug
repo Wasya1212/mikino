@@ -1,0 +1,116 @@
+extends layouts/default
+
+block preload
+    .empty
+
+block vars
+    -
+        page = {
+            language: 'ua',
+            name: 'registration',
+            title: 'Registration',
+            appTitle: 'Registration',
+            description: 'Registration page'
+        }
+    
+block body
+    main
+        .progress(role="progressbar", tabindex="0", aria-valuenow="0", aria-valuemin="0", aria-valuemax="100")#registration-progressbar
+                .progress-meter
+
+        .expanded.row.full-height#registration-container 
+            // main registration form
+            form.small-12.medium-7.large-3.medium-centered.large-centered.column.align-self-middle(action="", autocomplete="off", novalidate, data-abide="")#registration-form
+                h2 Registration
+                .errorBox.alert.callout(data-abide-error="", style="display: none;")
+                input(type="email", name="mail", placeholder="Mail")#mail-input
+                input(type="password", name="password", placeholder="Password")#password-input
+                input(type="password", name="confirm-password", placeholder="Confirm password")#confirmed-password-input
+                input.expanded.large.button(type="submit", value="Registrate")
+                a.to-login-btn(href="/login") login
+
+            // additional information
+            form.small-12.medium-7.large-3.medium-centered.large-centered.column(action="", autocomplete="off")#name-form
+                h3 Name
+                .errorBox.alert.callout(data-abide-error="", style="display: none;")
+                input(type="text", name="first-name", placeholder="Name")#first-name-input
+                input(type="text", name="middle-name", placeholder="Surrname")#middle-name-input
+                input(type="text", name="last-name", placeholder="Last name")#last-name-input
+                input.expanded.large.button(type="submit", value="Confirm")
+                .expanded.button-group
+                    a.button(onclick="showEndRegistrationReveal();") finish
+                    a.button(onclick="showAvatarForm();") next
+                a.to-login-btn(href="/login") login
+
+            form.small-12.medium-7.large-3.medium-centered.large-centered.column(action="", autocomplete="off")#avatar-form
+                h3 Your photo
+                .errorBox.alert.callout(data-abide-error="", style="display: none;")
+                .small-8.medium-6.large-9.float-center
+                    .avatar-wrapper
+                        .avatar-image(style="background-image: url('http://placehold.it/200x200?text=avatar');")
+                label.expanded.button(for="imageUpload") upload image
+                input.show-for-sr(type="file", accept="image/*", name="avatar")#imageUpload
+                input.expanded.large.button(type="submit", value="Confirm")
+                .expanded.button-group
+                    a.button(onclick="showEndRegistrationReveal();") finish
+                    a.button(onclick="showAboutInfoForm();") next
+                a.to-login-btn(href="/login") login
+
+            form.small-12.medium-7.large-3.medium-centered.large-centered.column(action="", autocomplete="off")#about-form
+                h3 About You
+                .errorBox.alert.callout(data-abide-error="", style="display: none;")
+                label(for="#birth-input") You birth
+                input(type="date", name="birth", placeholder="Birth day")#birth-input
+                fieldset.expand.columns
+                    legend Who are you?
+                    input(type="radio", name="sex", value="male", checked='male', required)#male-radio
+                    label(for="male-radio") Male
+                    input(type="radio", name="sex", value="female")#female-radio
+                    label(for="female-radio") Female
+                label Few word about you...
+                textarea(name="about", rows="5", placeholder="Enter here")#about-text-area
+                input.expanded.large.button(type="submit", value="Confirm")
+                .expanded.button-group
+                    a.button(onclick="showEndRegistrationReveal();") finish
+                    a.button(onclick="showContactsForm();") next
+                a.to-login-btn(href="/login") login
+
+            form.small-12.medium-7.large-3.medium-centered.large-centered.column(action="", autocomplete="off")#info-form
+                h3 Contact info
+                .errorBox.alert.callout(data-abide-error="", style="display: none;")
+                input(type="text", name="phone", placeholder="Phone number")#phone-input
+                label(for="country-select")#country-input Your country
+                select(name="country")#country-select
+                    each country in countries
+                        option(value=country.value) #{country.name}
+                input(type="text", name="sity", placeholder="City")#city-input
+                input.expanded.large.button(type="submit", value="Confirm")
+                .expanded.button-group
+                    a.button(onclick="showEndRegistrationReveal();") finish
+                    a.button(onclick="showSecretForm();") next
+                a.to-login-btn(href="/login") login
+
+            form.small-12.medium-7.large-3.medium-centered.large-centered.column(action="", autocomplete="off")#secret-form
+                h3 Your secret
+                .errorBox.alert.callout(data-abide-error="", style="display: none;")
+                label(for="secret-type-select") Choose the secret
+                select(name="secret")#secret-type-select
+                    each secret in secrets
+                        option(value=secret.value) #{secret.text}
+                input(type="text", placeholder="You secret word", name="answer")#secret-word-input
+                input.expanded.large.success.button(type="submit", value="Complete registration")
+                .expanded.button-group
+                    a.button(onclick="showEndRegistrationReveal();") finish
+                a.to-login-btn(href="/login") login
+
+            // alert window
+            .reveal(data-reveal="false", role="dialog")#reveal
+                h1
+                button.close-button(data-close="", aria-label="Close modal", type="button")
+                    span(aria-hidden="true") &times
+
+        a.button.expanded.full-height.column.align-self-middle(href="/login")#to-login Sign up
+    
+    script(src="js/common.js")
+    script(src="js/maskedInput.js")
+    script(src="js/registration.js")

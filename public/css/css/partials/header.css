@@ -1,0 +1,69 @@
+#toggleMenu {
+  color: white; }
+  #toggleMenu a {
+    display: block;
+    height: 30px;
+    width: 30px; }
+  #toggleMenu .toogle-logo {
+    border-radius: 2px;
+    background-image: url(http://localhost:5000/img/assets/toggle_logo2.png);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 100; }
+
+#head-nav {
+  width: 100%;
+  padding: 0;
+  background: linear-gradient(to bottom, #72d8f0, #9ddeed, #72d8f0); }
+  #head-nav a {
+    color: #4a6d7c; }
+  #head-nav .menu-text {
+    height: 50px;
+    padding: 0; }
+    #head-nav .menu-text a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url(http://localhost:5000/img/assets/logo.png); }
+      #head-nav .menu-text a img {
+        width: 100%;
+        height: 100%; }
+  #head-nav li {
+    list-style-type: none; }
+  #head-nav .top-bar-left {
+    margin-top: 7px;
+    position: relative; }
+    #head-nav .top-bar-left #inform-menu {
+      background-color: transparent; }
+  #head-nav .top-profile-name {
+    text-align: right;
+    display: inline;
+    padding-right: 10px; }
+  #head-nav .top-profile-image {
+    height: 30px;
+    width: 30px; }
+  #head-nav .top-bar-right #top-profile {
+    background-color: transparent; }
+    #head-nav .top-bar-right #top-profile img {
+      border-radius: 2px;
+      border: none; }
+    #head-nav .top-bar-right #top-profile .submenu {
+      background: linear-gradient(to bottom, #72d8f0, #9ddeed, #72d8f0);
+      border: none; }
+
+#inform-menu li {
+  position: relative; }
+  #inform-menu li ul {
+    position: relative;
+    width: 220px;
+    z-index: 100;
+    position: absolute;
+    border: 1px solid black;
+    background-color: #fff; }
+
+/*# sourceMappingURL=header.css.map */

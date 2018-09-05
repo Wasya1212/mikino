@@ -1,0 +1,11 @@
+form.float-right(enctype="multipart/form-data")#upload-photo-form
+    label.file-name-field.float-left
+    #upload-photo-btn
+        label.button(for="photoUpload") Upload photo
+    input.show-for-sr(type="file", multiple="false", accept="image/jpeg,image/png", name="photoUpload")#photoUpload
+    button.loading(value="")
+    button.button(type="button")#cancelPhotoUpload
+        span.show-for-sr Close
+        span(aria-hidden="true")
+            i.fi-x
+    input.button(type="submit", value="")#send-uploaded-photo-btn

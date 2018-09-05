@@ -1,0 +1,52 @@
+#main-menu-wrapper {
+  background-color: #fff;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 1rem;
+  margin-top: 0 !important;
+  overflow: auto;
+  height: calc(100vh - 50px); }
+  #main-menu-wrapper .has-submenu a {
+    color: #4a6d7c; }
+  #main-menu-wrapper #main-submenu .home-link a {
+    color: white;
+    background-color: #70cff2; }
+  #main-menu-wrapper #friends-submenu ul li {
+    width: 100%;
+    margin: 10px 0; }
+  #main-menu-wrapper #friends-submenu ul .friends-submenu-box {
+    position: relative;
+    height: 35px; }
+    #main-menu-wrapper #friends-submenu ul .friends-submenu-box a {
+      padding: 0;
+      display: block;
+      position: relative;
+      max-width: 75%;
+      height: 100%; }
+      #main-menu-wrapper #friends-submenu ul .friends-submenu-box a .avatar-box {
+        position: absolute;
+        left: 0;
+        border-radius: 5px;
+        width: 35px;
+        height: 35px; }
+      #main-menu-wrapper #friends-submenu ul .friends-submenu-box a .friend-name {
+        max-width: 100%;
+        margin-left: 40px;
+        display: inline-block;
+        font-size: 14px; }
+    #main-menu-wrapper #friends-submenu ul .friends-submenu-box button {
+      display: block;
+      position: absolute !important;
+      top: 0;
+      right: 0;
+      border-radius: 5px;
+      position: relative;
+      width: 15%;
+      margin: 0;
+      background-image: url(http://localhost:5000/img/assets/send_message.png);
+      background-size: 100% 100%; }
+      #main-menu-wrapper #friends-submenu ul .friends-submenu-box button:before {
+        content: "";
+        display: block;
+        padding-top: 100%; }
+
+/*# sourceMappingURL=menu.css.map */

@@ -1,0 +1,32 @@
+extends ../layouts/default
+
+block vars
+    -
+        page = {
+            language: 'ua',
+            name: 'message',
+            title: 'Message',
+            appTitle: 'Message',
+            description: 'Message page'
+        }
+
+block content
+    #chat.clearfix
+        if (!messages)
+            h1 No messages
+        else
+            each message in messages
+                if message.from.toString() == currentUser._id.toString()
+                    +message(message, currentUser, true)
+                else
+                    +message(message, order, false)
+                
+    
+    form(action="")#send-message
+        .input-group
+            input.input-group-field(type="text")#message
+            .input-group-button
+                input.button(type="submit", value="submit")
+    
+block common
+    script(src="js/message.js")

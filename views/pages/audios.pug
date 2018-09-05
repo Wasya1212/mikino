@@ -1,0 +1,31 @@
+extends ../layouts/default
+
+block vars
+    -
+        page = {
+            language: 'ua',
+            name: 'audios',
+            title: 'Audios',
+            appTitle: 'Audios',
+            description: 'Audios page'
+        }
+
+block additional
+    script(src="js/mediaelementplayer/mediaelementplayer.js")
+    //link(href="js/mediaelementplayer/build/mediaelementplayer.min.css", rel="stylesheet")    
+
+block content
+    include ../components/audioplayer
+    .expanded.row
+        .large-10.column.clearfix
+            .audios-area#audios
+                each audio in audios
+                    +audioBox(audio)
+                    
+        .show-for-large.large-2.column
+            h1 filter
+        
+block common
+    script(src="js/audio.js")
+    script(src="js/mediaelementplayer/mediaelement-and-player.min.js")
+    script(src="js/mediaelementplayer/index.js")

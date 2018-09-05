@@ -1,0 +1,7 @@
+mixin personDialog(person)
+    .dialogBox
+        a(href="/messages?sel=" + person._id)
+            .dialogAvatarImage.avatar(style="background-image: url(uploads/" + person.avatar + ")")
+                img.print-only(src="uploads/" + person.avatar, alt="")
+            .dialogProfileInfo
+                span= person.name.fName + ' ' + person.name.lName

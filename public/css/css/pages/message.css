@@ -1,0 +1,22 @@
+#chat {
+  max-width: 1200px;
+  margin: 0 auto;
+  max-height: calc(100vh - 200px);
+  overflow: auto;
+  display: block; }
+
+.page-message #main-content-wrapper {
+  max-height: 100vh !important;
+  min-height: 0;
+  padding: 0 50px; }
+  .page-message #main-content-wrapper #send-message {
+    max-width: 1200px;
+    margin: 0 auto; }
+
+.dialogBox a .dialogAvatarImage {
+  box-shadow: 0px 0 5px rgba(0, 0, 0, 0.39);
+  border-radius: 50%; }
+  .dialogBox a .dialogAvatarImage img {
+    width: auto; }
+
+/*# sourceMappingURL=message.css.map */

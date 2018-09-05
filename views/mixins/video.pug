@@ -1,0 +1,29 @@
+-
+    var none_image_src = 'http://localhost:5000/img/assets/video_background.jpg';
+    
+    var getDate = function(string) {
+        var new_date = new Date(string);
+        var datetime = new_date.getDay() + "."
+                + (new_date.getMonth()+1)  + "." 
+                + new_date.getFullYear() + " "  
+                + new_date.getHours() + ":"  
+                + new_date.getMinutes();
+                
+        return datetime;
+    }
+    
+    
+mixin videoPreviewBox(video)   
+    - var screenshots = video.screenshots[0] || [];
+    - var previewImage = screenshots.length > 0 ? screenshots[0] : none_image_src;
+    
+    .videoPreviewBox.clearfix(id="video-preview-" + video._id)
+        .preview-screenshots(onload='setPreviewImage($(this), "' + previewImage + '");')
+            each screenshot, i in screenshots
+                img.video-screenshot.print-only(class="video-screenshot-" + video._id, src="uploads/screenshots/" + screenshot, onerror="imgError(this, '" + none_image_src + "');", id="video-screenshot-" + (i+1))
+            .play-background.hidden(onclick='showVideoPlayer("' + video.owner + '", "' + video.filename + '", "' + video.mime + '", $(this));')
+        .video-info
+            p.video-title-name= video.original_name || 'Not named'
+            span.video-duration= secondsToHms(video.duration)
+            span.video-creation-time= getDate(video.uploaded) || 'none date'
+            span.video-views= video.views || '0'
